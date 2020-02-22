@@ -19,7 +19,7 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-router.post('/sigin', async (req, res) => {
+router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password){
@@ -37,7 +37,7 @@ router.post('/sigin', async (req, res) => {
     res.send({ token });
 
     } catch (err) {
-        return res.status(42).send({ error: 'Invalid password or email' })
+        return res.status(422).send({ error: 'Invalid password or email' })
     }
 });
 
